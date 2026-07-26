@@ -1,0 +1,302 @@
+/* ==========================================
+   DASHBOARD MAIN LAYOUT
+   ========================================== */
+.dashboard-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* HEADER */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.brand-welcome h1 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin: 0;
+}
+
+.user-email {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 4px 0 0 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ==========================================
+   GLOBAL & COMPONENT BUTTON STYLES
+   Targeting child buttons in NearbyPlaces too
+   ========================================== */
+.btn,
+.dashboard-wrapper button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+.btn:hover,
+.dashboard-wrapper button:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.btn-planner-toggle {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+}
+
+.btn-planner-toggle:hover {
+    background-color: #0369a1 !important;
+}
+
+.btn-danger {
+    background-color: #fee2e2 !important;
+    color: #ef4444 !important;
+    border-color: #fca5a5 !important;
+}
+
+.btn-danger:hover {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+/* Target plain buttons inside NearbyPlaces cards directly */
+.nearby-places-container button,
+.NearbyPlaces button {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0284c7 !important;
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.nearby-places-container button:hover,
+.NearbyPlaces button:hover {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #0284c7 !important;
+}
+
+/* ==========================================
+   2-COLUMN GRID STRUCTURE
+   ========================================== */
+.dashboard-body {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 24px;
+    align-items: start;
+}
+
+/* WEATHER SUMMARY BAR */
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.weather-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.badge {
+    background-color: #dcfce7;
+    color: #166534;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.weather-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.metric {
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric .label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.metric .val {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2px;
+}
+
+.metric .val.highlight {
+    color: #0284c7;
+}
+
+/* FILTER BAR */
+.places-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.results-count {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group.search-fill {
+    flex: 1;
+}
+
+.custom-select,
+.custom-input {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    width: 100%;
+    outline: none;
+}
+
+.custom-select:focus,
+.custom-input:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+/* STICKY SIDEBAR MAP */
+.dashboard-sidebar {
+    position: sticky;
+    top: 24px;
+}
+
+.map-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+}
+
+.map-frame {
+    height: 480px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+/* ==========================================
+   SMART TRIP PLANNER MODAL OVERLAY
+   ========================================== */
+.planner-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.planner-modal-card {
+    width: 100%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.close-btn {
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .dashboard-body {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        position: static;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+    }
+}
