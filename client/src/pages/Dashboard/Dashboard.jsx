@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { searchLocation } from "../../services/mapService";
-import { getNearbyPlaces } from "../../services/placeService";
+import { getNearbyPlaces } from "../../services/PlaceService";
 import { getWeather } from "../../services/weatherService";
 
 import Map from "../../components/Map/Map";

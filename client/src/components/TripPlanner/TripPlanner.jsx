@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { searchLocation } from "../../services/mapService";
-import { getNearbyPlaces } from "../../services/placeService";
+import { getNearbyPlaces } from "../../services/PlaceService";
 import { getWeather } from "../../services/weatherService";
 import TransportPreference from "../Transport/TransportPreference";
 import HotelSearch from "../Hotels/HotelSearch";
